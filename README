@@ -1,0 +1,22 @@
+Petruc Rares 336 CA                TEMA 3 APD - MPI
+
+    Am inceput tema prin a citi din fisierele corespunzatoare fiecarui proces
+coordonator de cluster si a trimite informatia ca intr-un fel de algoritm clica
+spre vecinii coordonatori. Dupa ce am adunat informatia despre topologie in
+fiecare procesor coordonator, am trimis-o si catre procesoarele worker.
+    Pentru realizarea calculelor, am impartit vectorul in asa fel incat fiecare
+procesor worker sa se ocupe de bucatica lui de vector folosind formulele de
+start si end din primul laborator de APD (putin adaptate pentru ca procesele
+coordonator sa nu se implice). Am trimis deci mai intai, bucatelele
+de vector spre workerii din clusterul 0 si intreg vectorul nesortat spre
+ceilalti coordonatori, urmand ca acestia sa trimita spre workerii asociati
+bucatelele de vector corespunzatoare.
+    Ca dificultati intalnite, am avut probleme cu afisarea intrucat desi aveam
+o bariera intre toate procesoarele dupa ce afisau fiecare topologia si inainte
+ca primul procesor sa afiseze vectorul sortat, mi se mai intampla sa se afiseze
+informatia intercalata intre vector si topologie. Asa ca m-am decis sa fac toate
+afisarile (inclusiv cele legate de logare) intr-un singur procesor coordonator
+si anume procesorul 0. 
+    Tema mi s-a parut usoara ca idee, insa aceste mici probleme legate de afisare
+mi-au mancat inca o zi fata de implementarea logicii temei.
+    
